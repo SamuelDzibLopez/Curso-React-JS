@@ -2,13 +2,11 @@
 
 Para una mejor comprensión y contenido de este tema:
 
-~~~
 [SyntheticEvent – React (reactjs.org)](https://es.legacy.reactjs.org/docs/events.html)
-~~~
 
 El ejemplo de un ***native event*** y un ***sinthetic event***.
 
-~~~
+~~~jsx
 import React, { Component } from "react";
 
 export default class MasSobreEventos extends Component {
@@ -49,7 +47,7 @@ Hagamos un poco mas, complejo el evento, pasando parámetros.
 
 Enviemos un mensaje al evento y que este se imprima en consola.
 
-~~~
+~~~jsx
 import React, { Component } from "react";
 
 export default class MasSobreEventos extends Component {
@@ -86,13 +84,15 @@ export default class MasSobreEventos extends Component {
 ~~~
 
 Con ayuda de una ***arrow function*** podemos obtener un parámetro de un evento.
+
+---
 ## Eventos personalizados.
 
 Los eventos personalizados, son eventos que queremos asignar a un ***nuevo componente*** desde otro.
 
 Pongamos el siguiente código para ejemplo:
 
-~~~
+~~~jsx
 function Boton () {
 	return (
 		<button>
@@ -108,7 +108,7 @@ Renderizamos el componente ***Boton*** dentro de ***MasSobreEventos*** y le asig
 
 Agregamos al final el codigo:
 
-~~~
+~~~jsx
 <Boton onClick={(e) => this.handleClick(e, "Hola, pasando parametro desde un evento")}/>
 ~~~
 
@@ -120,7 +120,7 @@ Para ello es necesario los ***Eventos personalizados***.
 
 Lo único a hacer es pasar el evento como una ***prop*** al ***componente***.
 
-~~~
+~~~jsx
 <Boton myOnClick={(e) => this.handleClick(e, "Hola, pasando parametro desde un evento")}/>
 ~~~
 
@@ -131,7 +131,7 @@ También necesitamos modificar nuestro componente.
 	¡UNICAMENTE RECIBIENDO LAS PROPS!
 	Y ¡ASIGNANDO COMO EVENTO onClick LA PROP!
 
-~~~
+~~~jsx
 function Boton (props) {
 	return (
 		<button onClick={props.myOnClick}>

@@ -17,7 +17,7 @@ Algunos métodos para estos ***states*** son:
 
 El **constructor***:
 
-~~~
+~~~jsx
 constructor ()
 ~~~
 
@@ -25,7 +25,7 @@ Este método se ejecuta al inicio de todo ***component***, desde el momento de i
 
 El **render***:
 
-~~~
+~~~jsx
 render ()
 ~~~
 
@@ -33,7 +33,7 @@ Es el método que se encarga de renderizar en pantalla (las veces que sean neces
 
 y el **ComponentDidMount**
 
-~~~
+~~~jsx
 componentDidMount ()
 ~~~
 
@@ -44,7 +44,7 @@ Este método, se ejecuta, cuando un ***component*** es insertado en el DOM.
 
 El **render**:
 
-~~~
+~~~jsx
 render ()
 ~~~
 
@@ -52,7 +52,7 @@ Este método, es el mismo que el anterior, simplemente se ejecuta, tanto cuando 
 
 Y el **ComponentDidUpdate**:
 
-~~~
+~~~jsx
 componentDidUpdate ()
 ~~~
 
@@ -63,7 +63,7 @@ Este método, se ejecuta, cuando el componente, es actualizado, cuando cambia de
 
 El **ComponentWillUnmount**:
 
-~~~
+~~~jsx
 componentWillUnmount ()
 ~~~
 
@@ -85,7 +85,7 @@ En el siguiente ejemplo, podras ver, una funcionalidad de los ***métodos del ci
 
 A continuación el código del elemento padre:
 
-~~~
+~~~jsx
 import React, { Component } from "react";
 
 export default class CicloVida extends Component {
@@ -165,7 +165,7 @@ export default class CicloVida extends Component {
 
 Y el código del ***component hijo***.
 
-~~~
+~~~jsx
 class Reloj extends Component {
 	constructor (props) {
 		super(props);

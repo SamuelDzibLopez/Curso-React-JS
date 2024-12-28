@@ -1,4 +1,4 @@
-# 8. Elements Rendering
+# 08. Elements Rendering
 
 Renderizado de listas de elementos
 
@@ -6,7 +6,7 @@ En ocasiones necesitaremos renderizar elementos o listas (**ol** o **ul**) en nu
 
 Para ello un ejemplo basico es:
 
-~~~
+~~~jsx
 import React, {Component} from "react";
 
 export default class RenderizadoElementos extends Component {
@@ -45,7 +45,7 @@ En este ejemplo, tenemos un atributo array (**seasons**), que necesitamos render
 
 En el anterior ejemplo, si nosotros renderizamos el ***component***, podremos ver, desde la consola, que muestra un ***warning***, esto se debe a que al renderizar un elemento, este necesita de un atributo único (**una key, o un id**).
 
-		react-jsx-dev-runtime.development.js:95  Warning: Each child in a list should have a unique "key" prop.
+	react-jsx-dev-runtime.development.js:95  Warning: Each child in a list should have a unique "key" prop.
 
 El error a mostrarse, debería ser similar al anterior texto.
 
@@ -53,7 +53,7 @@ Para ello, ***REACT*** nos proporciona un atributo llamado ***key***.
 
 Lo único a hacer es ***agregar el atributo key*** a nuestra etiqueta ***JSX***.
 
-~~~
+~~~jsx
 <li key={el}>{el}</li>
 ~~~
 
@@ -69,7 +69,7 @@ Primero, vamos a crear un archivo con un **JSON**, para poder tener un elemento 
 
 	Lo llamaremos data.js
 
-~~~
+~~~json
 {
 	"frameworks" : [
 		{
@@ -108,7 +108,7 @@ Después, creamos un nuevo componente que se renderizara.
 
 En el ejemplo anterior, renderizábamos un ***elemento de REACT (li)***, aquí estamos renderizando directamente un ***componente de REACT***.
 
-~~~
+~~~jsx
 function ElementoLista (props) {
 	return (
 		<li>
@@ -131,7 +131,7 @@ Después en nuestro componente padre
 	-Importamos el componente ElementoLista
 	-Importamos el data.json
 
-~~~
+~~~jsx
 import data from "../helpers/data.json";
 ~~~
 
@@ -139,7 +139,7 @@ Para ser usados en el ***componet*** padre.
 
 y renderizaremos el elemento en ***RenderizadoElemento***
 
-~~~
+~~~jsx
 export default class RenderizadoElementos extends Component {
 	constructor (props) {
 		super(props);
@@ -193,7 +193,7 @@ Lo que hace la parte anexada del código es:
 
 Si queremos hacer mas estético nuestro componente hijo, simplemente agregamos el **target="_blank"**
 
-~~~
+~~~jsx
 function ElementoLista (props) {
 	return (
 		<li>

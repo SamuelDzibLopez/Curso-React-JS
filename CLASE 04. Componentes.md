@@ -1,27 +1,29 @@
-# 4. Componentes.
+# 04. Componentes.
 
-### Creación de un componente.
+## Creación de un componente.
 
-Un componente es una pieza de UI, que una vez creada (codificada), puede ser usada múltiples veces sin la necesidad de volver a crear.
+Un componente es una pieza de ***UI*** (***Interface User***), que una vez creada (codificada), puede ser utilizada múltiples veces sin la necesidad de volverse a crear.
 
-Dentro de la carpeta de un proyecto de react, dentro de ***src***, podemos crear una carpeta ***components***, donde almacenar todos nuestros componentes que vayamos creando. 
+Dentro de la carpeta de un proyecto de ***react.js***, dentro de ***src***, podemos crear una carpeta ***components***, donde almacenar todos nuestros componentes que vayamos creando. 
 
 Como buena practica, un componente suele ser creado usando el UpperCameCase:
 
 ~~~
 Component
 ~~~
-### Importar  REACT en un componente.
+
+---
+## Importar  REACT en un componente.
 
 **Nota:**
 Es importante siempre importar la librería de REACT en los componentes.
 
 De la siguiente manera:
 
-~~~
+~~~jsx
 import React from "react";
 ~~~
-### Diferentes maneras de crear un componente.
+## Diferentes maneras de crear un componente.
 
 Existen diferentes maneras de crear componentes.
 
@@ -30,11 +32,11 @@ Existen diferentes maneras de crear componentes.
 - **Componente** basado en funciones **expresadas**
 
 A continuación, un ejemplo de cada uno de ellos:
-##### Componente basado en clases:
+## Componente basado en clases:
 
 Se trata de un ***objeto*** declarado por medio de una clase ***Component*** de ***react***.
 
-~~~
+~~~jsx
 import React, { Component } from "react";
 
 class Componente extends Component {
@@ -53,11 +55,13 @@ Este es un componente basado en clases
 Consta de la función base ***render***, para retornar contenido (en este caso, JSX).
 
 Para finalizar un ***export default*** del componente. 
-##### Componente basado en funciones declaradas:
+
+---
+## Componente basado en funciones declaradas:
 
 Se trata de una ***función*** de tipo declarada que retorna texto de tipo ***JSX***. 
 
-~~~
+~~~jsx
 import React, { Component } from "react";
 
 function Componente2 (props) {
@@ -72,11 +76,13 @@ Este es un componente basado en una funcion declarada
 ~~~
 
 Al terminar la función, usamos un ***export default*** para exportar el componente
-##### Componente basado en funciones expresadas:
+
+---
+## Componente basado en funciones expresadas:
 
 Esta forma de creación de un componente usar una ***función expresada*** en una ***constante***, acompañada de una ***arrow function***.
 
-~~~
+~~~jsx
 import React, { Component } from "react";
 
 const Componente3 = props => <h2>{props.msg}</h2>;
@@ -84,15 +90,16 @@ const Componente3 = props => <h2>{props.msg}</h2>;
 export default Componente3;
 ~~~
 
-Como toda ***arrow function***, esta no necesita llaves, y por ultimo, exporta el componente con un ***export default***
+Como toda ***arrow function***, esta no necesita llaves, y por ultimo, exporta el componente con un ***export default.***
 
-### Usar un componente en un archivo externo.
+---
+## Usar un componente en un archivo externo.
 
 Los componentes son piezas que, muy a menudo encajan o van dentro de otras piezas, por ello, es necesario importarlos o llamarlos en otros componentes o archivos.  
 
 Para importar un componente, primero definimos con un export:
 
-~~~
+~~~jsx
 import Componente from "./components/Componente";
 ~~~
 
@@ -100,7 +107,7 @@ una vez ya importado el componente, podremos usarlo dentro del archivo.
 
 Para hacer uso de este, llamamos al componente, tal como llamaríamos una ***etiqueta HTML**.
 
-~~~
+~~~jsx
 <Componente
 	msg = "¡Hola!, Soy un componente de clase."
 />

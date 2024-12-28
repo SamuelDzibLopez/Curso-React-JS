@@ -1,4 +1,4 @@
-# 9. Events and Binding
+# 09. Events and Binding
 
 Podemos hacer renderizados de componentes cada que se ejecute un evento; Ya sea un **click** o algún otro.
 
@@ -6,7 +6,7 @@ Para ello, en ***REACT***, se le asignan a los componentes, funciones, tales com
 
 De la siguiente forma, como un ejemplo:
 
-~~~
+~~~jsx
 <button onClick={this.sumar}>
 	+
 </button>
@@ -18,7 +18,7 @@ Esta manera, se llama a una función, llamada **sumar** definida en el **compone
 
 De esta forma, ya podemos crear un componente para ejemplificar mejor:
 
-~~~
+~~~jsx
 import React, { Component} from "react";
 
 export default class Eventos extends Component {
@@ -61,7 +61,7 @@ export default class Eventos extends Component {
 }
 ~~~
 
-En el presente ****component***, se presenta un renderizado de **2 botones**, donde uno tiene asignado cada vez que se ejecute el evento ***onClick*** se ejecute la función ***sumar***.
+En el presente ***component***, se presenta un renderizado de **2 botones**, donde uno tiene asignado cada vez que se ejecute el evento ***onClick*** se ejecute la función ***sumar***.
 
 Y el **h3** renderiza el valor del ***state.contador*** que por inicio es **0**. 
 
@@ -81,7 +81,7 @@ Para ello, hay que hacer un pequeño cambio en el ***constructor*** del ***compo
 
 Asi:
 
-~~~
+~~~jsx
 constructor (props) {
 	super(props);
 		this.state = {
@@ -100,7 +100,7 @@ Lo que hace es:
 
 Quedando de la siguiente manera:
 
-~~~
+~~~jsx
 import React, { Component} from "react";
 
 export default class Eventos extends Component {
@@ -149,7 +149,7 @@ Listo, ya funciona el botón de **suma**, agreguémosle el botón de **resta**.
 
 Creamos una nueva función.
 
-~~~
+~~~jsx
 restar (e) {
 	console.log("Sumando");
 	console.log(this);
@@ -161,13 +161,13 @@ restar (e) {
 
 Lo bindeamos en el ***constructor***.
 
-~~~
+~~~jsx
 this.restar = this.restar.bind(this);
 ~~~
 
 Y le asignamos el ***event*** al botón de resta.
 
-~~~
+~~~jsx
 <button onClick={this.restar}>
 	-
 </button>
@@ -175,7 +175,7 @@ Y le asignamos el ***event*** al botón de resta.
 
 Listo, nuestro código de ***component***, queda de la siguiente manera.
 
-~~~
+~~~jsx
 import React, { Component} from "react";
 
 export default class Eventos extends Component {
@@ -198,7 +198,7 @@ export default class Eventos extends Component {
 	}
 
 	restar (e) {
-		console.log("Sumando");
+		console.log("Restando");
 		console.log(this);
 		this.setState({
 			contador: this.state.contador - 1,

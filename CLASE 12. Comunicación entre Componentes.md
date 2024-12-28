@@ -9,7 +9,7 @@ Esta clase tiene como objetivo entender como se realiza la comunicación entre c
 
 Para ello, creamos un ***component*** llamado **"Padre"**.
 
-~~~
+~~~jsx
 export default class Padre extends Component {
 	state = {
 		contador: 0,
@@ -54,7 +54,7 @@ export default class Padre extends Component {
 
 También creamos otro ***component*** "Hijo", el cual renderizaremos en el "Padre".
 
-~~~
+~~~jsx
 function Hijo (props) {
 	return (
 		<>
@@ -90,7 +90,7 @@ En este mismo ejemplo, se aplica esta comunicación, mediante el paso de un ***e
 
 En la parte del llamado del ***componente Hijo***:
 
-~~~
+~~~jsx
 <Hijo
 
 	//(Paso del evento mediante una prop)
@@ -111,7 +111,7 @@ En la parte del llamado del ***componente Hijo***:
 
 Y en el ***Hijo***, la comunicación es al realizar el evento:
 
-~~~
+~~~jsx
 function Hijo (props) {
 	return (
 		<>

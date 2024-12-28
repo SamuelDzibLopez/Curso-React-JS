@@ -1,5 +1,4 @@
-
-# 7. Conditional Rendering
+# 07. Conditional Rendering
 
 En muchas ocasiones, nuestra APP, deberá cambiar el ***estado*** y con ello renderizar diferentes **componentes**.
 
@@ -13,7 +12,7 @@ Tenemos este componente ***padre***.
 
 ***Nota:*** No olvidemos el ***import de Component de REACT***.
 
-~~~
+~~~jsx
 export default class RenderizadoCondicional extends Component {
 	render() {
 		return (
@@ -35,7 +34,7 @@ Que a su vez, **renderiza 2 elementos hijos**, los cuales son:
 
 Login.
 
-~~~
+~~~jsx
 function Login () {
 	return (
 		<div>
@@ -49,7 +48,7 @@ function Login () {
 
 Y Logout.
 
-~~~
+~~~jsx
 function Logout () {
 	return (
 		<div>
@@ -67,7 +66,7 @@ Pero, si quiero renderizar solo uno de ellos a la vez, podemos resolverlo, utili
 
 Cambiando el **componente padre*** de la siguiente forma:
 
-~~~
+~~~jsx
 export default class RenderizadoCondicional extends Component {
 	//Creacion del constructor
 	constructor (props) {

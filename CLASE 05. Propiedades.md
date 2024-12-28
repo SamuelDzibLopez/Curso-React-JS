@@ -1,6 +1,6 @@
-# 5. Props.
+# 05. Props.
 
-### Creación de las propiedades.
+## Creación de las propiedades.
 
 Una propiedad es un valor o dato que un ***componente***, para ser utilizado dentro de este.
 Las propiedades nos ayudan a poder reutilizar de mayor manera nuestros componentes, creando de esta manera "cajas vacías" a ser llenadas por propiedades a como deseemos.
@@ -10,12 +10,11 @@ Las propiedades nos ayudan a poder reutilizar de mayor manera nuestros component
 Las propiedades a enviar a un componente se declaran al momento de usar un componente.
 Se definen dentro de la ***etiqueta JSX*** del ***componente***.
 
-***Nota:***
-Las ***props*** se agregar de manera similar al de agregar ***atributos a etiquetas HTML*** comunes.
+***Nota:*** Las ***props*** se agregar de manera similar al de agregar ***atributos a etiquetas HTML*** comunes.
 
 De la siguiente manera:
 
-~~~
+~~~jsx
 <Componente
 	msg = "¡Hola!, Soy un componente de clase."
 />
@@ -23,7 +22,7 @@ De la siguiente manera:
 
 O bien, podría verse también así:
 
-~~~
+~~~jsx
 <Componente msg = "¡Hola!, Soy un componente de clase." />
 ~~~
 
@@ -33,7 +32,7 @@ Al enviar propiedades, el componente debe ser capaz de recibirlas, para ello, de
 
 Un ejemplo:
 
-~~~
+~~~jsx
 import React from "react";
 
 export default function Propiedades (props) {
@@ -49,13 +48,14 @@ export default function Propiedades (props) {
 
 Donde en los parámetros a recibir en la función del componente tenemos las propiedades (props).
 
+---
 ### Propiedades por default
 
 Podemos asignar ***propiedades por default*** a nuestros componentes, para que si estos no reciben parámetros, se les asignen los definidos.
 
 Para ello, agregamos a nuestro ***componente*** un código, quedando de la siguiente manera:
 
-~~~
+~~~jsx
 import React from "react";
 
 export default function Propiedades (props) {
@@ -76,13 +76,14 @@ Propiedades.defaultProps = {
 
 En el ejemplo anterior, se manda un ***objeto*** con una propiedad llamada ***porDefecto*** la cual se imprime el el h2 del componente.
 
+---
 ### Tipos de datos en las propiedades
 
 #### Strings, numbers y booleans 
 
 Podemos enviar ***diferentes tipos de datos*** en las ***propiedades*** para ser utilizado en un componente, tal como se envían al siguiente componente.
 
-~~~
+~~~jsx
 <Propiedades
 	cadena="Cadena" 
 	Numero = {19} 
@@ -94,7 +95,7 @@ Para propiedades que no sean de tipo ***cadena***, se utilizan los { }, para el 
 
 Quedando en el componente, de la siguiente manera.
 
-~~~
+~~~jsx
 import React from "react";
 
 export default function Propiedades (props) {
@@ -128,7 +129,7 @@ El tipo de dato ***boolean*** no se visualiza como un texto, este puede servir p
 
 Si queremos imprimir dato con el ***boolean***, podemos hacer algo asi
 
-~~~
+~~~jsx
 <li>
 	{props.boolean ? "Verdadero" : "Falso"}
 </li>
@@ -136,13 +137,14 @@ Si queremos imprimir dato con el ***boolean***, podemos hacer algo asi
 
 De esta manera, si el ***props.boolean*** es ***true***, se imprime **"Verdadero"**, si no, se imprime **"Falso"**.
 
+---
 #### Arrays, objets, REACT elements, functions y REACT components
 
 También podemos pasar datos mas complejos, tales como ***arrays***.
 
 Para ello, la sintaxis es la siguiente:
 
-~~~
+~~~jsx
 <Propiedades
 	cadena="Cadena"
 	numero = {19}
@@ -153,7 +155,7 @@ Para ello, la sintaxis es la siguiente:
 
 Recibiendo, dentro del componente de la siguiente manera:
 
-~~~
+~~~jsx
 <li>
 	{props.arreglo}
 </li>
@@ -161,9 +163,9 @@ Recibiendo, dentro del componente de la siguiente manera:
 
 Imprimiendo, de esta manera, el ***array***.
 
-***Nota:*** El siguiente ejemplo, imprime todos los elementos del ***array*** juntos y seguidos, (en el ejemplo: 123), si queremos imprimir un arrat, de mejor manera, podemos usar el método **.join()**.
+***Nota:*** El siguiente ejemplo, imprime todos los elementos del ***array*** juntos y seguidos, (en el ejemplo: 123), si queremos imprimir un array, de mejor manera, podemos usar el método **.join()**.
 
-~~~
+~~~jsx
 <li>
 	{props.arreglo.join(", ")}
 </li>
@@ -171,7 +173,7 @@ Imprimiendo, de esta manera, el ***array***.
 
 También, podemos enviar y recibir un objeto.
 
-~~~
+~~~jsx
 <Propiedades
 	cadena="Cadena"
 	numero = {19}
@@ -183,7 +185,7 @@ También, podemos enviar y recibir un objeto.
 
 Pero, la manera de recibirlo en el componente, es por atributo.
 
-~~~
+~~~jsx
 <li>
 	{props.objeto.nombre}
 </li>
@@ -191,20 +193,20 @@ Pero, la manera de recibirlo en el componente, es por atributo.
 
 También, un **componente** puede recibir un ***elemento de REACT:***
 
-~~~
+~~~jsx
 <Propiedades
 	cadena="Cadena"
 	numero = {19}
 	boolean = {true}
 	arreglo = {[1,2,3]}
 	objeto = {{nombre:"Roberto", correo: "Roberto@gmail.com"}}
-	elementoReact = {<i>Esto es un elemento de REACT</i>}
+	elementoReact = {<li>Esto es un elemento de REACT</li>}
 />
 ~~~
 
 Y recibirlo:
 
-~~~
+~~~jsx
 <li>
 	{props.elementoReact}
 </li>
@@ -214,7 +216,7 @@ Y recibirlo:
 
 también podemos recibir funciones como propiedades:
 
-~~~
+~~~jsx
 <Propiedades
 	cadena="Cadena"
 	numero = {19}
@@ -228,7 +230,7 @@ también podemos recibir funciones como propiedades:
 
 Donde, dentro del componente, podemos usarla.
 
-~~~
+~~~jsx
 <li>
 	{props.arreglo.map(props.funcion)}
 </li>
@@ -236,7 +238,7 @@ Donde, dentro del componente, podemos usarla.
 
 Y por ultimo, podemos recibir incluso otro ***componente de REACT:***
 
-~~~
+~~~jsx
 <Propiedades
 	cadena="Cadena"
 	numero = {19}
@@ -251,11 +253,13 @@ Y por ultimo, podemos recibir incluso otro ***componente de REACT:***
 
 Para utilizar dentro:
 
-~~~
+~~~jsx
 <li>
 	{props.componenteReact}
 </li>
 ~~~
+
+---
 ## Manejo de inicialización de props y requerid
 
 Primero debemos ejecutar el comando en nuestro proyecto:
@@ -268,19 +272,17 @@ Descargando la librería de REACT para las **props**.
 
 ***Nota:*** Para mayor información, podemos consultar la información en **npm:**
 
-~~~
 [prop-types - npm (npmjs.com)](https://www.npmjs.com/package/prop-types)
-~~~
 
 Ya una vez, descargada la dependencia, podemos hacer uso de ella, para ello, importamos en nuestro documento a usar.
 
-~~~
+~~~jsx
 import PropTypes from "prop-types";
 ~~~
 
 Y debajo de nuestra función de **componente**, colocamos las reglas:
 
-~~~
+~~~jsx
 Propiedades.propTypes = {
     numero: PropTypes.number,
 }
@@ -288,16 +290,16 @@ Propiedades.propTypes = {
 
 Donde, definimos:
 
-	-primero el nombre del ***componente***.
-	- Segundo, el ***.propTypes*** por regla.
-	- y dentro de los ***{ }***:
-		- El nombre de la ***prop*** y ***:***
-		- el ***PropType. 
+	-primero el nombre del componente.
+	- Segundo, el .propTypes por regla.
+	- y dentro de los { }:
+		- El nombre de la prop y :
+		- el PropType. 
 		- Y por ultimo, el tipo de dato que se espera
 
 En total, el código completo quedaría:
 
-~~~
+~~~jsx
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -352,7 +354,7 @@ En el ejemplo anterior, esperábamos que la ***propiedad*** **numero** fuese de 
 
 Un ejemplo mas visual:
 
-~~~
+~~~jsx
 MyComponent.propTypes = {
 	optionalArray: PropTypes.array,
 	optionalBigInt: PropTypes.bigint,
@@ -371,7 +373,7 @@ También podemos definir que una propiedad sea ***obligatoria***.
 
 Simplemente, agregamos la propiedad.
 
-~~~
+~~~jsx
 Propiedades.propTypes = {
 	numero: PropTypes.number.isRequired
 }

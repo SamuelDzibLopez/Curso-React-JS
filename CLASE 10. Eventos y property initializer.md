@@ -13,7 +13,7 @@ Tenemos el mismo código que la clase anterior, con diferencias
 	- el this.state ya no necesita el "this.".
 	- las "fumciones" sumar y restar ahora son "arrow functions".
 
-~~~
+~~~jsx
 import React, { Component} from "react";
 
 //Properties initializer
